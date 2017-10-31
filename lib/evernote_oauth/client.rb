@@ -47,10 +47,11 @@ module EvernoteOAuth
     def consumer
       @consumer ||= OAuth::Consumer.new(
         @consumer_key,
-        @consumer_secret,
+        @consumer_secret,       
         {site: endpoint,
           request_token_path: "/oauth",
-          access_token_path: "/oauth"}
+          access_token_path: "/oauth",
+          proxy: "http://172.16.2.30:8080"}
       )
     end
 
